@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
 if (process.env.NODE_ENV == "production") {
-  mongoose.connect(
+  MongoClient.connect(
     process.env.MLAB_URL,
     { useNewUrlParser: true }
   );
 } else {
-  mongoose.connect(
+  MongoClient.connect(
     "mongodb://localhost/api-tips",
     { useNewUrlParser: true }
   );
