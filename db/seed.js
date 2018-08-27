@@ -1,9 +1,9 @@
 const Tip = require("./tips");
 const tipList = require("./tips.json");
 
-Tip.remove({})
+Tip.deleteMany({})
   .then(() => {
-    return Tip.collection.insert(tipList);
+    return Tip.collection.insertMany(tipList);
   })
   .then(() => {
     process.exit();
