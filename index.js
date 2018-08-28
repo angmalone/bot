@@ -20,6 +20,16 @@ app.get("/api/tips", (req, res) => {
     });
 });
 
+app.get("/:id", (req, res) => {
+  Tip.findOne({ _id: req.params.id })
+    .then(tips => {
+      res.json(tips);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
 app.set("port", process.env.PORT || 3001);
 
 app.listen(app.get("port"), () => {
