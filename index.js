@@ -20,7 +20,7 @@ app.get("/api/tips", (req, res) => {
     });
 });
 
-app.get("api/tips/:id", (req, res) => {
+app.get("/api/tips/:id", (req, res) => {
   Tip.findOne({ _id: req.params.id })
     .then(tips => {
       res.json(tips);
