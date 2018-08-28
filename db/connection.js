@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const MongoClient = require("mongodb").MongoClient;
 
 if (process.env.NODE_ENV == "production") {
   mongoose.connect(
@@ -12,7 +11,5 @@ if (process.env.NODE_ENV == "production") {
     { useNewUrlParser: true }
   );
 }
-
 mongoose.Promise = Promise;
-
 module.exports = mongoose;
