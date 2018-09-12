@@ -3,12 +3,63 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const methodOverride = require("method-override");
 const Tip = require("./db/tips.js");
+const hbs = require("hbs");
 
 const app = express();
+app.use(express.static(path.join(__dirname, "public")));
+app.set("view engine", "hbs");
 app.use(bodyParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(cors());
+
+//UI
+
+app.get("/", (req, res) => {
+  Tip.find({}).then(tips => {
+    res.render("tips/index", { tips });
+  });
+});
+
+app.get("/new", (req, res) => {
+  res.render("tips/new");
+});
+
+app.get("/:id", (req, res) => {
+  Tip.findOne({ _id: req.params.id }).then(tips => {
+    res.render("trips/show", tips);
+  });
+});
+
+app.get("/edit/:id", (req, res) => {
+  Tip.findOne({ _id: req.params.id }).then(tips => {
+    res.render("tips/edit", tips);
+  });
+});
+
+app.put("/:id", (req, res) => {
+  Tip.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
+    tips => {
+      res.redirect("/tips");
+    }
+  );
+});
+
+app.delete("/:id", (req, res) => {
+  Tip.findOneAndRemove({ _id: req.params.id }).then(() => {
+    res.redirect("/tips");
+  });
+});
+
+app.post("/", (req, res) => {
+  Tip.create({
+    tip: req.body.tip
+  }).then(tips => {
+    res.redirect("/tips");
+  });
+});
+
+//API
 
 app.get("/api/tips", (req, res) => {
   Tip.find()
