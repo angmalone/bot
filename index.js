@@ -38,10 +38,10 @@ app.get("/tips/edit/:id", (req, res) => {
   });
 });
 
-app.put("/:id", (req, res) => {
+app.put("/api/tips/:id", (req, res) => {
   Tip.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
     tips => {
-      res.redirect("/tips");
+      res.redirect("/");
     }
   );
 });
