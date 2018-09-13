@@ -56,7 +56,7 @@ app.post("/api/tips", (req, res) => {
   Tip.create({
     tip: req.body.tip
   }).then(tips => {
-    res.redirect("/tips");
+    res.redirect("/");
   });
 });
 
