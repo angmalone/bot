@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/new", (req, res) => {
+app.get("/tips/new", (req, res) => {
   res.render("tips/new");
 });
 
