@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const methodOverride = require("method-override");
 const Tip = require("./db/tips.js");
+const path = require("path");
 const hbs = require("hbs");
 
 const app = express();
