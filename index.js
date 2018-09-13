@@ -32,7 +32,7 @@ app.get("/tips/:id", (req, res) => {
   });
 });
 
-app.get("/edit/:id", (req, res) => {
+app.get("/tips/edit/:id", (req, res) => {
   Tip.findOne({ _id: req.params.id }).then(tips => {
     res.render("tips/edit", tips);
   });
