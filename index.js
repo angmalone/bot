@@ -25,9 +25,9 @@ app.get("/new", (req, res) => {
   res.render("tips/new");
 });
 
-app.get("/:id", (req, res) => {
+app.get("/tips/:id", (req, res) => {
   Tip.findOne({ _id: req.params.id }).then(tips => {
-    res.render("trips/show", tips);
+    res.render("tips/show", tips);
   });
 });
 
