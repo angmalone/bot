@@ -6,7 +6,7 @@ const Tip = require("./db/tips.js");
 const hbs = require("hbs");
 
 const app = express();
-//app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "hbs");
 app.use(bodyParser());
 app.use(bodyParser.urlencoded({ extended: true }));

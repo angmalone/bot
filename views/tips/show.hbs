@@ -1,1 +1,14 @@
-<h1>testing</h1>
+<div class="landing">
+    <h2>
+        <em>{{this.tip}}:</em>
+    </h2>
+    <form action="/trips/edit/{{id}}" method="GET">
+        <input type="submit" value="Edit Tip">
+    </form>
+    <form onsubmit="return confirmDelete()" method="POST" action="/tips/{{id}}?_method=delete">
+        <input type="submit" value="Delete Tip">
+    </form>
+    <br>
+    <br>
+    <a class="home" href="/tips">⟵ Index</a>
+</div>
