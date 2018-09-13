@@ -1,0 +1,16 @@
+<div class="landing">
+    <h1>Edit Tip</h1>
+
+    <form action="/api/tips/{{id}}?_method=put" method="POST">
+        <p>
+            <label for="tip">Tip:</label>
+            <input required type="text" value="{{this.location}}" width="500px">
+        </p>
+</div>
+</br>
+<input type="submit" value="EditTip">
+</form>
+<br>
+<br>
+<a class="home" href="/tips">⟵ Index</a>
+</div>
