@@ -5,6 +5,7 @@ const methodOverride = require("method-override");
 const Tip = require("./db/tips.js");
 const path = require("path");
 const hbs = require("hbs");
+const db = require("./db/tips.json");
 
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
@@ -64,6 +65,16 @@ app.post("/api/tips/", (req, res) => {
 
 app.get("/api/tips", (req, res) => {
   Tip.find()
+    .then(tips => {
+      res.json(tips);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+app.get("/api/tips/random", (req, res) => {
+  Tip.aggregate([{ $sample: { size: 1 } }])
     .then(tips => {
       res.json(tips);
     })
