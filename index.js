@@ -49,11 +49,11 @@ app.put("/:id", (req, res) => {
 
 app.delete("/api/tips/:id", (req, res) => {
   Tip.findOneAndRemove({ _id: req.params.id }).then(() => {
-    res.redirect("/tips");
+    res.redirect("/");
   });
 });
 
-app.post("/api/tips/", (req, res) => {
+app.post("/api/tips", (req, res) => {
   Tip.create({
     tip: req.body.tip
   }).then(tips => {
