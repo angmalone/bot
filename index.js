@@ -93,6 +93,16 @@ app.get("/api/tips/:id", (req, res) => {
     });
 });
 
+app.put("/api/tips/:id", (req, res) => {
+  Tip.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
+    {}
+  );
+});
+
+app.delete("/api/tips/:id", (req, res) => {
+  Tip.findOneAndRemove({ _id: req.params.id }).then(() => {});
+});
+
 app.set("port", process.env.PORT || 3001);
 
 app.listen(app.get("port"), () => {
