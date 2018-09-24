@@ -47,7 +47,7 @@ app.put("/:id", (req, res) => {
   );
 });
 
-app.delete("/:id", (req, res) => {
+app.delete("/api/tips/:id", (req, res) => {
   Tip.findOneAndRemove({ _id: req.params.id }).then(() => {
     res.redirect("/tips");
   });
