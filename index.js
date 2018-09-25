@@ -17,7 +17,7 @@ app.use(cors());
 
 //UI
 
-app.get("/api/tips", (req, res) => {
+app.get("/", (req, res) => {
   Tip.find({}).then(tips => {
     res.render("tips/index", { tips });
   });
