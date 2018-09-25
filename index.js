@@ -17,7 +17,7 @@ app.use(cors());
 
 //UI
 
-app.get("/", (req, res) => {
+app.get("/api/tips", (req, res) => {
   Tip.find({}).then(tips => {
     res.render("tips/index", { tips });
   });
@@ -42,7 +42,7 @@ app.get("/tips/edit/:id", (req, res) => {
 app.put("/:id", (req, res) => {
   Tip.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
     tips => {
-      res.redirect("/");
+      res.redirect("/tips");
     }
   );
 });
@@ -57,7 +57,7 @@ app.post("/api/tips", (req, res) => {
   Tip.create({
     tip: req.body.tip
   }).then(tips => {
-    res.redirect("/");
+    res.redirect("/api/tips");
   });
 });
 
