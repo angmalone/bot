@@ -2,7 +2,7 @@
     <h2>
         <em>{{this.tip}}:</em>
     </h2>
-    <form action="/tips/edit/{{id}}" method="GET">
+    <form action="/api/tips/edit/{{id}}" method="GET">
         <input type="submit" value="Edit Tip">
     </form>
     <form onsubmit="return confirmDelete()" method="POST" action="/api/tips/{{id}}?_method=delete">

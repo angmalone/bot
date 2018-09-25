@@ -5,7 +5,7 @@ const methodOverride = require("method-override");
 const Tip = require("./db/tips.js");
 const path = require("path");
 const hbs = require("hbs");
-const db = require("./db/tips.json");
+//const db = require("./db/tips.json");
 
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
