@@ -5,7 +5,8 @@ const methodOverride = require("method-override");
 const Tip = require("./db/tips.js");
 const path = require("path");
 const hbs = require("hbs");
-//const db = require("./db/tips.json");
+const db = require("./db/tips.json");
+const NewTips = Tip.collection.find({ beenUsed: false });
 
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
@@ -73,8 +74,48 @@ app.get("/api/tips", (req, res) => {
     });
 });
 
+app.get("/api/tips/notused", (req, res) => {
+  // <------everything wrapped inside this function
+  Tip.collection("tip", function(err, collection) {
+    collection.find({ beenUsed: false }).toArray(function(err, tips) {
+      res.send(tips);
+    });
+  });
+});
+
+/*app.get("/api/tips/notused", (req, res) => {
+  NewTips.aggregate([{ $sample: { size: 1 } }])
+    .then(tips => {
+      res.json(tips);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});*/
+
+/*app.get("/api/tips/notused", (req, res) => {
+  Tip.find({ beenUsed: false })
+    .then(Tip.aggregate([{ $sample: { size: 1 } }]))
+    .then(tips => {
+      res.json(tips);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});*/
+
+app.get("/api/tips/alreadyused", (req, res) => {
+  Tip.find({ beenUsed: true })
+    .then(tips => {
+      res.json(tips);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
 app.get("/api/tips/random", (req, res) => {
-  Tip.aggregate([{ $sample: { size: 1 } }])
+  Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
     .then(tips => {
       res.json(tips);
     })

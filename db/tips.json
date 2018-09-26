@@ -1,224 +1,298 @@
 [
   {
+    "beenUsed": false,
     "tip": "Respond to clients within an hour during work hours. Outside of work hours, respond to them as soon as you’re reasonably able, even if it’s just an acknowledgment of receiving the message."
   },
   {
+    "beenUsed": false,
     "tip": "Make sure Fraase is tagged on to-dos."
   },
   {
+    "beenUsed": false,
     "tip": "Assign to-dos to Fraase, not the team member, unless otherwise indicated."
   },
   {
+    "beenUsed": false,
     "tip": "Try to use Basecamp as much as possible. A notable exception would be for clients that have a strong preference for another service."
   },
   {
+    "beenUsed": false,
     "tip": "Check whether the to-do that you are on is client facing or internal facing. Use proper grammar and etiquette when working on client facing to-dos. Be overly formal if you are not sure."
   },
   {
+    "beenUsed": false,
     "tip": "Put important news in the Slack #announcements room for the entire company to see."
   },
   {
+    "beenUsed": false,
     "tip": "Put random thoughts or fun things in Slack #random room for the entire company to see."
   },
   {
+    "beenUsed": false,
     "tip": "If you are going to be late, working from home or out of the office for sickness, first email the Operations Manager and your direct report then post in the #announcement room so that your team members know where you are. If necessary, later go back into Bamboo to log any PTO with a note in the comment section."
   },
   {
+    "beenUsed": false,
     "tip": "Unless it is urgent, do not use the @channel functionality in slack rooms. Instead, @ the specific team member or use the @here functionality to only ping those who have their chat open."
   },
   {
+    "beenUsed": false,
     "tip": "For all Quality Assurance to-dos, include AT THE MINIMUM, the following: a) Description of problem b) URL for where the developer can see the problem c) Screenshot"
   },
   {
+    "beenUsed": false,
     "tip": "When answering the phone, always say “Engage, this is [YOUR NAME] speaking, how may I help you?”."
   },
   {
+    "beenUsed": false,
     "tip": "Use headphones for listening to music or podcasts."
   },
   {
+    "beenUsed": false,
     "tip": "When waiting on approval from either directors or partners, the responsibility lies with the individual needing approval to make sure it is received. Sending it over and never following up is a sure fire way to miss a deadline."
   },
   {
+    "beenUsed": false,
     "tip": "Never bad mouth another agency or client outside of the office."
   },
   {
+    "beenUsed": false,
     "tip": "Keep “client complaints” to a minimum, everyone has problem clients and complaining about them excessively is unproductive."
   },
   {
+    "beenUsed": false,
     "tip": "Remember that launching is a window, not a specific moment in time."
   },
   {
+    "beenUsed": false,
     "tip": "Double check all your work for spelling and grammar; errors in those areas are the quickest way to lose trust from other people. Try using the Google Chrome plugin Grammarly!"
   },
   {
+    "beenUsed": false,
     "tip": "If you are running a meeting, get to the meeting at least 10 minutes prior. This particularly applies when you are running a meeting that you need to call any remote workers in."
   },
   {
+    "beenUsed": false,
     "tip": "When brainstorming with another employee, team, or the whole company, remember there are no bad ideas."
   },
   {
+    "beenUsed": false,
     "tip": "When brainstorming, it is your responsibility to merely facilitate discussion, do not guide it."
   },
   {
+    "beenUsed": false,
     "tip": "When emailing with a client, vendor, or anyone in a professional sense, always include a salutation and a sign-off unless the client has set the precedent in the chain otherwise."
   },
   {
+    "beenUsed": false,
     "tip": "Include a maximum of 2 exclamation points in an email. Any more than that and you risk the recipients not taking you seriously."
   },
   {
+    "beenUsed": false,
     "tip": "Never ever tell the design team to make something “pop.”"
   },
   {
+    "beenUsed": false,
     "tip": "For the client team: when providing feedback from a client to the production teams, do not copy and paste the words directly. It is your job to translate client wants/asks into something that is respectful and actionable."
   },
   {
+    "beenUsed": false,
     "tip": "Keep an eye out for the small things. No one is too important to help take out the trash, wipe down a table, or help with the dishwasher. Interns help with this, but they can’t do everything."
   },
   {
+    "beenUsed": false,
     "tip": "Production team: when giving an update to a client strategist, please inform them of the “why”. This helps the team inform the client of our rationale and ultimately win them over to our way of thinking."
   },
   {
+    "beenUsed": false,
     "tip": "Client team: please remember to always pad the estimates from the production teams. A good rule of thumb is 1.5 times their estimates"
   },
   {
+    "beenUsed": false,
     "tip": "Engage bills at $175/hour 99.99% of the time unless otherwise noted by Rapprich, Nick, or Fraase."
   },
   {
+    "beenUsed": false,
     "tip": "Please have all pricing, estimates, and especially timelines approved by the Director of Projects or, in some cases, Rapprich."
   },
   {
+    "beenUsed": false,
     "tip": "Beer:30 is 4:30 on Fridays."
   },
   {
+    "beenUsed": false,
     "tip": "Leave the door to the bathroom open when you’re done. That signals that the bathroom is open and others can use it. "
   },
   {
+    "beenUsed": false,
     "tip": "If you’re having a drawn-out (5+ min) conversation with someone, please move it into a breakout room or Slack."
   },
   {
+    "beenUsed": false,
     "tip": "Please do not take calls at your desk. Extended client calls should always be held in a breakout room."
   },
   {
+    "beenUsed": false,
     "tip": "Please be mindful of people’s own schedules and work ahead of them when asking for last minute or urgent requests. You catch more flies with honey than vinegar."
   },
   {
+    "beenUsed": false,
     "tip": "Manage your clients’ expectations. If you think you can do a task in two days, tell them 3; it never hurts to under promise and over deliver."
   },
   {
+    "beenUsed": false,
     "tip": "Under promise and over deliver!"
   },
   {
-    "tip": "When scheduling a meeting with a teammate, it always helps to check in first to make sure they are free before sending a calendar invite. This is especially true with client meetings and your coworkers."
+    "beenUsed": false,
+    "tip": "When scheduling a meeting with a teammate, it always helps to check in first to make sure they are free before sending a calendar invite. This is especially false with client meetings and your coworkers."
   },
   {
+    "beenUsed": false,
     "tip": "If you need help understanding something from the production team, ask. The more you understand, the better able you are to complete tasks."
   },
   {
+    "beenUsed": false,
     "tip": "Engage prefers WordPress but we’re technically “platform agnostic.” Don’t be afraid of new things!"
   },
   {
+    "beenUsed": false,
     "tip": "Engage prefers WPEngine when recommending hosting services to a client. But technical any hosting service that supports PHP7 is on the table."
   },
   {
+    "beenUsed": false,
     "tip": "When talking about browser compatibility, by default we support IE11+ (Internet Explorer version 11 and above; IE11+ is a term also includes the other browsers). If clients are interested in supporting older versions of browsers, we can do that, we’ll just need to be clear that that costs extra."
   },
   {
-    "tip": "NEVER talk about other clients with your clients. Your priority should always be them and they should think that’s true."
+    "beenUsed": false,
+    "tip": "NEVER talk about other clients with your clients. Your priority should always be them and they should think that’s false."
   },
   {
+    "beenUsed": false,
     "tip": "NEVER gossip. Those who gossip to you, gossip about you."
   },
   {
-    "tip": "When a team member asks you to do something, be sure to communicate your workload and therefore timeline expectations to them. This is particularly true for client strategy. Failure to meet a deadline and not communicate problems leads to a breakdown in trust."
+    "beenUsed": false,
+    "tip": "When a team member asks you to do something, be sure to communicate your workload and therefore timeline expectations to them. This is particularly false for client strategy. Failure to meet a deadline and not communicate problems leads to a breakdown in trust."
   },
   {
+    "beenUsed": false,
     "tip": "It’s OK to say “no,” if it’s warranted."
   },
   {
+    "beenUsed": false,
     "tip": "When asking quick questions about a project, please ping the Slack channel for that project rather than DM’ing the person."
   },
   {
+    "beenUsed": false,
     "tip": "Gravity forms has some built in CSS classes that you can use out of the box for formatting fields. Check them out to make your forms spiffy: https://www.gravityforms.com/css-ready-classes/"
   },
   {
+    "beenUsed": false,
     "tip": "Always try and call in to a conference line about 5 minutes before the scheduled start time. This way you can greet the client on the call and not leave them waiting in the awkward silence (or terrible hold music)."
   },
   {
+    "beenUsed": false,
     "tip": "Clients (and everyone) love hearing their own name; it never hurts to repeat it."
   },
   {
+    "beenUsed": false,
     "tip": "Similarly, smile when you’re talking on the phone. Not only will it make you sound happier and more excited, but it will also make you feel happier and excited."
   },
   {
+    "beenUsed": false,
     "tip": "Don’t be afraid to ask for help. There are many experts in our company and we are all working towards the same goal! Phoning a friend to get a second opinion is encouraged."
   },
   {
+    "beenUsed": false,
     "tip": "ALWAYS send a recap note either on Basecamp or email after a call with a client. This will help remind the client of all the wonderful work you’re about to do for them, but also provide you with a to-do list to execute on."
   },
   {
+    "beenUsed": false,
     "tip": "Rehearse what you’re going to say on a call or a presentation. It always helps to have a rough outline of what you’d like to review with a client ahead of time."
   },
   {
+    "beenUsed": false,
     "tip": "Always provide an agenda ahead of a meeting, especially if it’s with a client. Agendas should ideally be sent the day before a meeting or call, and at the latest the morning before an afternoon call the same day."
   },
   {
+    "beenUsed": false,
     "tip": "If you have a client meeting at a client site, you might need to get creative about where you set up before or afterwards. Working from home or from a coffee shop from a location that saves you time is ideal. Try to balance the most efficient use of your time with the fact that you’re helpful to your teammates when you’re in the office."
   },
   {
+    "beenUsed": false,
     "tip": "If you have a gut feeling that something is wrong… it probably is. Try to understand the thing that is making you nervous and dive into the problem deeper until you can identify actionable steps towards a solution. "
   },
   {
+    "beenUsed": false,
     "tip": "Engage is supportive of educational opportunities! If you’re interested in a conference or class, write up an email to your direct report with details about it including why it will be valuable to you and Engage, cost and number of days. At Engage, we want you to come up with educational opportunities you’re interested in rather than forcing you into conferences/classes you don’t want to take :)"
   },
   {
+    "beenUsed": false,
     "tip": "Always check with the Director of Projects before going directly to the team member. The exception is if you have a design request that takes <15 min. The Design Team is prepared to act on those immediately."
   },
   {
+    "beenUsed": false,
     "tip": "Always ensure the phone is completely off the hook when finished a call. The phones are tricky and it’s best to not risk a client hear you talk “unfiltered.”"
   },
   {
+    "beenUsed": false,
     "tip": "When setting up meeting or call times, provide a timeframe (e.g. Wednesday afternoon) and let the client suggest a time to you. It can also be helpful to suggest multiple windows of availability so the client can pick the most convenient time for them."
   },
   {
+    "beenUsed": false,
     "tip": "Remember, our jobs are to make clients’ lives easier, not harder."
   },
   {
+    "beenUsed": false,
     "tip": "Call your clients. Especially if you have bad news, call your clients. It’s easier to discuss things in real time than communicate via email. Furthermore, if it’s bad news, calling does not allow a client to get angry over time and ideally a call ends with a satisfactory resolution."
   },
   {
+    "beenUsed": false,
     "tip": "Don’t let vendors boss you around. You are paying them your client’s money and unless it’s actually impossible, they should be going the extra mile to deliver what you need."
   },
   {
+    "beenUsed": false,
     "tip": "Eat meals in the kitchen, break out rooms, or conference room - not at your desk."
   },
   {
+    "beenUsed": false,
     "tip": "Most proposals or decks take twice as long as you think they will. Make sure you’re budgeting your time appropriately."
   },
   {
+    "beenUsed": false,
     "tip": "To edit a House site, you need to be on VPN."
   },
   {
+    "beenUsed": false,
     "tip": "To get VPN access, you need a token from HIR."
   },
   {
+    "beenUsed": false,
     "tip": "To get a token from HIR, you need to go through their background check process. This takes a few weeks and can be started by contacting the Operations Manager."
   },
   {
+    "beenUsed": false,
     "tip": "To activate your new RSA House token, login using just the code on the token. Then choose your four digits that you’ll use every time."
   },
   {
+    "beenUsed": false,
     "tip": "Do not go above someone’s head or around them to get something done or if you’re upset with them. Tackle things face to face or use a co-worker to facilitate the conversation."
   },
   {
+    "beenUsed": false,
     "tip": "For client team: when sending design updates to a client, remember to include what round of edits you are on with design and be sure to get final signoff in writing. "
   },
   {
+    "beenUsed": false,
     "tip": "Reports, proposals, and update documents should be sent externally as PDFs unless the client has requested otherwise. Questionnaires or items where we request inline editing from the client should be send as Microsoft Word documents."
   },
   {
+    "beenUsed": false,
     "tip": "The Headphones Rule: if both ears are covered, do not interrupt; if one ear is uncovered, it’s ok to interrupt to talk about work. Remote employees also set the headphones emoji as their Slack status to indicate “both ears covered.” "
   },
   {
+    "beenUsed": false,
     "tip": "It’s always best practice to check with your teammates (Slack, email) before you put something on their calendar, especially if it is with a client."
   }
 ]
