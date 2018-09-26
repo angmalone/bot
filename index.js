@@ -16,52 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(cors());
 
-//UI
-
-app.get("/", (req, res) => {
-  Tip.find({}).then(tips => {
-    res.render("tips/index", { tips });
-  });
-});
-
-app.get("/tips/new", (req, res) => {
-  res.render("tips/new");
-});
-
-app.get("/tips/:id", (req, res) => {
-  Tip.findOne({ _id: req.params.id }).then(tips => {
-    res.render("tips/show", tips);
-  });
-});
-
-app.get("/tips/edit/:id", (req, res) => {
-  Tip.findOne({ _id: req.params.id }).then(tips => {
-    res.render("tips/edit", tips);
-  });
-});
-
-app.put("/:id", (req, res) => {
-  Tip.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
-    tips => {
-      res.redirect("/tips");
-    }
-  );
-});
-
-app.delete("/api/tips/:id", (req, res) => {
-  Tip.findOneAndRemove({ _id: req.params.id }).then(() => {
-    res.redirect("/");
-  });
-});
-
-app.post("/api/tips", (req, res) => {
-  Tip.create({
-    tip: req.body.tip
-  }).then(tips => {
-    res.redirect("/api/tips");
-  });
-});
-
 //API
 
 app.get("/api/tips", (req, res) => {
@@ -75,25 +29,6 @@ app.get("/api/tips", (req, res) => {
 });
 
 app.get("/api/tips/notused", (req, res) => {
-  // <------everything wrapped inside this function
-  Tip.collection("tip", function(err, collection) {
-    collection.find({ beenUsed: false }).toArray(function(err, tips) {
-      res.send(tips);
-    });
-  });
-});
-
-/*app.get("/api/tips/notused", (req, res) => {
-  NewTips.aggregate([{ $sample: { size: 1 } }])
-    .then(tips => {
-      res.json(tips);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-});*/
-
-/*app.get("/api/tips/notused", (req, res) => {
   Tip.find({ beenUsed: false })
     .then(Tip.aggregate([{ $sample: { size: 1 } }]))
     .then(tips => {
@@ -102,7 +37,7 @@ app.get("/api/tips/notused", (req, res) => {
     .catch(err => {
       console.log(err);
     });
-});*/
+});
 
 app.get("/api/tips/alreadyused", (req, res) => {
   Tip.find({ beenUsed: true })
@@ -149,3 +84,49 @@ app.set("port", process.env.PORT || 3001);
 app.listen(app.get("port"), () => {
   console.log(`WE KNUCKIN AND BUCKIN ON PORT ${app.get("port")} 👊`);
 });
+
+//UI
+
+/*app.get("/", (req, res) => {
+  Tip.find({}).then(tips => {
+    res.render("tips/index", { tips });
+  });
+});
+
+app.get("/tips/new", (req, res) => {
+  res.render("tips/new");
+});
+
+app.get("/tips/:id", (req, res) => {
+  Tip.findOne({ _id: req.params.id }).then(tips => {
+    res.render("tips/show", tips);
+  });
+});
+
+app.get("/tips/edit/:id", (req, res) => {
+  Tip.findOne({ _id: req.params.id }).then(tips => {
+    res.render("tips/edit", tips);
+  });
+});
+
+app.put("/:id", (req, res) => {
+  Tip.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
+    tips => {
+      res.redirect("/tips");
+    }
+  );
+});
+
+app.delete("/api/tips/:id", (req, res) => {
+  Tip.findOneAndRemove({ _id: req.params.id }).then(() => {
+    res.redirect("/");
+  });
+});
+
+app.post("/api/tips", (req, res) => {
+  Tip.create({
+    tip: req.body.tip
+  }).then(tips => {
+    res.redirect("/api/tips");
+  });
+});*/
