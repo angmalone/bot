@@ -50,6 +50,36 @@ app.get("/api/tips/alreadyused", (req, res) => {
 });
 
 app.get("/api/tips/random", (req, res) => {
+  if (Tip.count({ beenUsed: { $eq: true } }) === Tip.count()) {
+    Tip.updateMany(
+      { beenUsed: true },
+      {
+        $set: {
+          beenUsed: false
+        }
+      }
+    ).then(
+      Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
+        .then(tips => {
+          res.json(tips);
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    );
+  } else {
+    Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
+      .then(tips => {
+        res.json(tips);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+});
+
+/*CORRECT
+app.get("/api/tips/random", (req, res) => {
   Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
     .then(tips => {
       res.json(tips);
@@ -57,7 +87,7 @@ app.get("/api/tips/random", (req, res) => {
     .catch(err => {
       console.log(err);
     });
-});
+});*/
 
 app.get("/api/tips/:id", (req, res) => {
   Tip.findOne({ _id: req.params.id })
@@ -129,4 +159,59 @@ app.post("/api/tips", (req, res) => {
   }).then(tips => {
     res.redirect("/api/tips");
   });
+});*/
+
+///////
+
+/*if (Tip.count({ beenUsed: { $eq: true } }) === Tip.collection.count()) {
+  Tip.updateMany(
+    { beenUsed: true },
+    {
+      $set: {
+        beenUsed: false
+      }
+    }
+  ).then(
+    Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
+      .then(tips => {
+        res.json(tips);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  );
+} else {
+  Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
+    .then(tips => {
+      res.json(tips);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}*/
+
+///////
+
+/*app.get("/tips/api/random", (req, res) => {
+  if (req.query.groupId == null || req.query.userId == null) {
+    return res.send("Must include both groupId and userId");
+  } else {
+    MongoClient.connect(
+      url,
+      function(err, db) {
+        var collection = db.collection("groups");
+        collection.findOne(
+          {
+            _id: ObjectID(req.query.groupId),
+            group_members: {
+              $elemMatch: { user_id: req.query.userId }
+            }
+          },
+          function(err, result) {
+            return res.send(result != null);
+          }
+        );
+      }
+    );
+  }
 });*/
