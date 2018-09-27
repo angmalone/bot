@@ -49,7 +49,7 @@ app.get("/api/tips/alreadyused", (req, res) => {
     });
 });
 
-app.get("/api/tips/random", (req, res) => {
+/*app.get("/api/tips/random", (req, res) => {
   if (Tip.count({ beenUsed: { $eq: true } }) === Tip.count()) {
     Tip.updateMany(
       { beenUsed: true },
@@ -76,9 +76,8 @@ app.get("/api/tips/random", (req, res) => {
         console.log(err);
       });
   }
-});
+});*/
 
-/*CORRECT
 app.get("/api/tips/random", (req, res) => {
   Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
     .then(tips => {
@@ -87,7 +86,7 @@ app.get("/api/tips/random", (req, res) => {
     .catch(err => {
       console.log(err);
     });
-});*/
+});
 
 app.get("/api/tips/:id", (req, res) => {
   Tip.findOne({ _id: req.params.id })
