@@ -78,6 +78,14 @@ app.get("/api/tips/random", (req, res) => {
       });
   });
 
+  app.post("/api/tips", (req, res) => {
+    Tip.create({
+      tip: req.body.tip
+    }).then(tips => {
+      res.redirect("/api/tips");
+    });
+  });
+
   app.put("/api/tips/:id", (req, res) => {
     Tip.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
       {}
@@ -88,17 +96,8 @@ app.get("/api/tips/random", (req, res) => {
     Tip.findOneAndRemove({ _id: req.params.id }).then(() => {});
   });
 
-  app.set("port", process.env.PORT || 3001);
-
-  app.listen(app.get("port"), () => {
-    console.log(`WE KNUCKIN AND BUCKIN ON PORT ${app.get("port")} 👊`);
-  });
-});
-
-app.post("/api/tips", (req, res) => {
-  Tip.create({
-    tip: req.body.tip
-  }).then(tips => {
-    res.redirect("/api/tips");
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Our app is running on port ${PORT}`);
   });
 });
