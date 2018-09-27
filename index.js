@@ -48,11 +48,7 @@ app.get("/api/tips/alreadyused", (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-/*KEEP THIS ONE
-=======
->>>>>>> parent of 0112c5b... testing
-app.get("/api/tips/random", (req, res) => {
+/*app.get("/api/tips/random", (req, res) => {
   Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
     .then(tips => {
       res.json(tips);
@@ -60,7 +56,7 @@ app.get("/api/tips/random", (req, res) => {
     .catch(err => {
       console.log(err);
     });
-});
+});*/
 
 app.get("/api/tips/random", (req, res) => {
   Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
@@ -98,8 +94,6 @@ app.get("/api/tips/random", (req, res) => {
     console.log(`WE KNUCKIN AND BUCKIN ON PORT ${app.get("port")} 👊`);
   });
 });
-<<<<<<< HEAD
-=======
 
 app.post("/api/tips", (req, res) => {
   Tip.create({
@@ -107,5 +101,4 @@ app.post("/api/tips", (req, res) => {
   }).then(tips => {
     res.redirect("/api/tips");
   });
-});*/
->>>>>>> parent of 0112c5b... testing
+});
