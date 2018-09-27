@@ -8,7 +8,6 @@ const db = require("./db/tips.json");
 
 const app = express();
 app.set("view engine", "hbs");
-app.use(bodyParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(cors());
@@ -46,16 +45,6 @@ app.get("/api/tips/alreadyused", (req, res) => {
     });
 });
 
-/*app.get("/api/tips/random", (req, res) => {
-  Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
-    .then(tips => {
-      res.json(tips);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-});*/
-
 app.get("/api/tips/random", (req, res) => {
   Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
     .then(console.log(res))
@@ -65,37 +54,38 @@ app.get("/api/tips/random", (req, res) => {
     .catch(err => {
       console.log(err);
     });
+});
 
-  app.get("/api/tips/:id", (req, res) => {
-    Tip.findOne({ _id: req.params.id })
-      .then(tips => {
-        res.json(tips);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  });
-
-  app.post("/api/tips", (req, res) => {
-    Tip.create({
-      tip: req.body.tip
-    }).then(tips => {
-      res.redirect("/api/tips");
+app.get("/api/tips/:id", (req, res) => {
+  Tip.findOne({ _id: req.params.id })
+    .then(tips => {
+      res.json(tips);
+    })
+    .catch(err => {
+      console.log(err);
     });
-  });
+});
 
-  app.put("/api/tips/:id", (req, res) => {
-    Tip.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
-      {}
-    );
+app.post("/api/tips", (req, res) => {
+  Tip.create({
+    tip: req.body.tip
+  }).then(tips => {
+    res.redirect("/api/tips");
   });
+});
 
-  app.delete("/api/tips/:id", (req, res) => {
-    Tip.findOneAndRemove({ _id: req.params.id }).then(() => {});
-  });
+app.put("/api/tips/:id", (req, res) => {
+  Tip.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
+    {}
+  );
+});
 
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => {
-    console.log(`Our app is running on port ${PORT}`);
-  });
+app.delete("/api/tips/:id", (req, res) => {
+  Tip.findOneAndRemove({ _id: req.params.id }).then(() => {});
+});
+
+app.set("port", process.env.PORT || 3001);
+
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
 });
