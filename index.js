@@ -10,7 +10,7 @@ const db = require("./db/tips.json");
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "hbs");
-app.use(bodyParser.json());
+app.use(bodyParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(cors());
