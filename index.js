@@ -3,12 +3,10 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const methodOverride = require("method-override");
 const Tip = require("./db/tips.js");
-const path = require("path");
 const hbs = require("hbs");
 const db = require("./db/tips.json");
 
 const app = express();
-app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "hbs");
 app.use(bodyParser());
 app.use(bodyParser.urlencoded({ extended: true }));
