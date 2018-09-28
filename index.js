@@ -46,15 +46,53 @@ app.get("/api/tips/alreadyused", (req, res) => {
     });
 });
 
-app.get("/api/tips/random", (req, res) => {
-  Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
-    .then(console.log(res))
+///
+
+/*app.get("/api/tips/random", (req, res) => {
+  Tip.updateMany({}, { $set: { beenUsed: false } })
+    .then(
+      Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
+    )
     .then(tips => {
       res.json(tips);
     })
     .catch(err => {
       console.log(err);
     });
+});*/
+
+app.get("/api/tips/random", (req, res) => {
+  Tip.aggregate([
+    { $match: { beenUsed: false } },
+    { $sample: { size: 1 } }
+  ]).then(tips => {
+    if (tips == !undefined) {
+      Tip.aggregate([{ $match: { beenUsed: false } }, { $sample: { size: 1 } }])
+        .then(tips => {
+          res.json(tips);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    } else {
+      Tip.updateMany({}, { $set: { beenUsed: false } }).then(
+        Tip.aggregate([
+          { $match: { beenUsed: false } },
+          { $sample: { size: 1 } }
+        ])
+          .then(tips => {
+            res.json(tips);
+          })
+          .then(tips => {
+            res.json(tips);
+          })
+          .catch(err => {
+            console.log(err);
+            process.exit();
+          })
+      );
+    }
+  });
 });
 
 app.get("/api/tips/:id", (req, res) => {
