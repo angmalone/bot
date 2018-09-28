@@ -83,9 +83,6 @@ app.get("/api/tips/random", (req, res) => {
           .then(tips => {
             res.json(tips);
           })
-          .then(tips => {
-            res.json(tips);
-          })
           .catch(err => {
             console.log(err);
             process.exit();
